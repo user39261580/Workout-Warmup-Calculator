@@ -8,10 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <!-- Theme colour for PWA -->
-  <meta name="theme-color" content="#21808D" />
-  <!-- Manifest (blob injected by app.js) -->
-  <link rel="manifest" id="manifest-placeholder" />
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -26,67 +22,58 @@
     <section class="card" id="planner-card">
       <div class="card__body">
         <form id="planner-form" class="flex flex-col gap-16" autocomplete="off">
-          <!-- Body part -->
-          <div class="form-row">
-            <div class="form-group" style="width:100%">
-              <label for="body-part" class="form-label">Body part</label>
-              <select id="body-part" class="form-control" required>
-                <option value="" disabled selected hidden>Select...</option>
-                <option value="Upper">Upper</option>
-                <option value="Lower">Lower</option>
-              </select>
-            </div>
+
+          <div class="form-group">
+            <label for="body-part" class="form-label">Body part</label>
+            <select id="body-part" class="form-control" required>
+              <option value="" disabled selected hidden>Select...</option>
+              <option value="Upper">Upper</option>
+              <option value="Lower">Lower</option>
+            </select>
           </div>
 
-          <!-- Target weight + unit -->
-          <div class="form-row grid-2">
-            <div class="form-group">
-              <label for="target-weight" class="form-label">Target weight</label>
-              <input type="number" id="target-weight" class="form-control" min="20" step="1" placeholder="e.g. 100" required />
-            </div>
-            <div class="form-group">
-              <label for="unit" class="form-label">Unit</label>
-              <select id="unit" class="form-control" required>
-                <option value="kg">kg</option>
-                <option value="lbs">lbs</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="target-weight" class="form-label">Target weight</label>
+            <input type="number" id="target-weight" class="form-control" min="20" step="1" placeholder="e.g. 100" required />
           </div>
 
-          <!-- Reps & warm-up sets -->
-          <div class="form-row grid-2">
-            <div class="form-group">
-              <label for="target-reps" class="form-label">Target reps / set</label>
-              <select id="target-reps" class="form-control" required>
-                <option value="5">5</option>
-                <option value="8">8</option>
-                <option value="12">12</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="set-count" class="form-label"># Warm-up sets</label>
-              <select id="set-count" class="form-control" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="unit" class="form-label">Unit</label>
+            <select id="unit" class="form-control" required>
+              <option value="kg" selected>kg</option>
+              <option value="lbs">lbs</option>
+            </select>
           </div>
 
-          <!-- Barbell checkbox -->
-          <div class="form-row">
-            <label class="form-label flex items-center gap-8" style="cursor:pointer">
-              <input type="checkbox" id="for-barbell" checked style="margin-right:8px" />
-              For Barbell (20 kg / 45 lb minimum)
-            </label>
+          <div class="form-group flex items-center gap-8">
+            <input type="checkbox" id="barbell-mode" checked />
+            <label for="barbell-mode" class="form-label" style="margin-bottom:0">For Barbell (20 kg / 45 lb min)</label>
+          </div>
+
+          <div class="form-group">
+            <label for="target-reps" class="form-label">Target reps / set</label>
+            <select id="target-reps" class="form-control" required>
+              <option value="5">5</option>
+              <option value="8">8</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="set-count" class="form-label"># Warm-up sets</label>
+            <select id="set-count" class="form-control" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
           </div>
 
           <!-- Actions -->
           <div class="form-actions flex gap-8">
-            <button id="copy-btn" class="btn btn--primary" type="button" disabled>Copy to clipboard</button>
+            <button id="copy-btn" class="btn btn--primary hidden" type="button">Copy to clipboard</button>
             <button id="reset-btn" class="btn btn--outline" type="button">Reset</button>
           </div>
         </form>
@@ -101,14 +88,17 @@
       <button class="accordion__header btn btn--secondary btn--full-width" type="button" aria-expanded="false" aria-controls="how-panel">How to use</button>
       <div id="how-panel" class="accordion__panel" hidden>
         <div class="accordion__content py-16 px-16">
-          <p>1. Select the workout parameters above. If you are using a barbell, keep the “For Barbell” box checked so the minimum weight is set to the weight of an empty bar (20&nbsp;kg / 45&nbsp;lb).</p>
-          <p>2. Review the generated warm-up plan.</p>
-          <p>3. Tap <strong>Copy to clipboard</strong> to save it to your notes.</p>
+          <ul style="padding-left: var(--space-16); list-style-type: disc;">
+            <li>Select the workout parameters above.</li>
+            <li>If “For Barbell” is checked, the target weight cannot be lower than an empty Olympic bar (20&nbsp;kg&nbsp;/&nbsp;45&nbsp;lb).</li>
+            <li>Review the generated warm-up plan.</li>
+            <li>Tap <strong>Copy to clipboard</strong> to copy lines such as “Set&nbsp;1&nbsp;–&nbsp;40&nbsp;kg&nbsp;×&nbsp;5&nbsp;reps”.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="accordion" id="refs-accordion">
+    <section class="accordion mt-8" id="refs-accordion">
       <button class="accordion__header btn btn--secondary btn--full-width" type="button" aria-expanded="false" aria-controls="refs-panel">References</button>
       <div id="refs-panel" class="accordion__panel" hidden>
         <div class="accordion__content py-16 px-16">

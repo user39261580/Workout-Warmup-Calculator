@@ -738,30 +738,88 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-/* Updated styles with fixes for select dropdown and toast visibility */
+/* Custom styles specific to Workout Warm-up Planner (updated) */
 
-/* ---------- Override select appearance for broader compatibility ---------- */
-select.form-control {
-  -webkit-appearance: auto; /* Revert to default */
-  -moz-appearance: auto;
-  appearance: auto;
-  background-image: none; /* Remove custom caret to avoid overlay */
-  padding-right: var(--space-12);
+/* ---------- Layout ---------- */
+.app-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
-/* ---------- Toast notifications ---------- */
-.toast {
-  position: fixed;
-  bottom: var(--space-24);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  padding: var(--space-12) var(--space-20);
+.app-title {
+  font-weight: var(--font-weight-bold);
+}
+
+/* One form element per row */
+#planner-form .form-group {
+  width: 100%;
+}
+
+/* Ensure space below planner so accordion buttons do not stick */
+.card {
+  margin-bottom: var(--space-32); /* 32px ≈ 2rem */
+}
+
+/* Accordion spacing */
+.accordion {
+  margin-top: var(--space-32); /* 32px ≈ 2rem */
+  width: 100%;
+}
+
+.accordion__header {
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+}
+
+.accordion__panel {
+  overflow: hidden;
+  transition: max-height var(--duration-normal) var(--ease-standard);
   background-color: var(--color-surface);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
+  border: 1px solid var(--color-card-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.accordion__panel[hidden] {
+  max-height: 0;
+  display: none;
+}
+
+.accordion__panel:not([hidden]) {
+  display: block;
+  max-height: 1000px;
+}
+
+/* ---------- Plan table ---------- */
+.plan-table {
+  overflow-x: auto;
+}
+
+.plan-table table {
+  width: 100%;
+  border-collapse: collapse;
   font-size: var(--font-size-sm);
-  box-shadow: var(--shadow-lg);
-  opacity: 1; /* Immediately visible */
+}
+
+.plan-table th,
+.plan-table td {
+  padding: var(--space-8);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.plan-table th {
+  background-color: var(--color-bg-2);
+  font-weight: var(--font-weight-semibold);
+}
+
+.plan-table tr.heaviest {
+  background-color: var(--color-bg-4);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Utility: prevent footer buttons sticking */
+.hidden {
+  display: none !important;
 }
