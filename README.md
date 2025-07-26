@@ -11,14 +11,14 @@ Stop guessing your warmups. Start lifting smarter. This simple tool generates a 
 
 ## 🤔 Why This App Exists
 
-As the weights on the bar get heavier, your warmups should get smarter. I was tired of winging my warmups and couldn't find a simple, science-backed tool to plan them. So, I built one.
+As the weights on the bar get heavier, your warmups should get smarter. I was tired of winging my warmups and couldn't find a tool flexible enough to customize parameters like warmup sets and target reps per set. So, I built one.
 
 This project started as an experiment with **Perplexity Labs** to generate the initial code and structure. From there, **GitHub Copilot** helped me refine, debug, and build out the features. It's a testament to how AI-powered tools can turn a simple idea into a handy app.
 
 ## ✨ Features
 
 * 🔬 **Science-Backed Warmup Calculator:** Input your main lift, target weight, and reps to get a precise warm-up plan with calculated sets and weights.
-* 📱 **Mobile-First \& PWA-Ready:** Works flawlessly on your phone at the gym or on your desktop at home.
+* 📱 **Mobile-First:** Works flawlessly on your phone at the gym or on your desktop at home.
 * 📋 **Copy to Clipboard:** Instantly copy your warmup plan to paste into your workout log or notes.
 * 📖 **References Included:** Curious about the science? All research papers and articles are shown in the app's accordion section.
 
