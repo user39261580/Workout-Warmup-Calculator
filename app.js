@@ -58,10 +58,9 @@ const DATA = {
     },
   },
   references: [
-    "Ribeiro et al. (2020) The Role of Specific Warm-up during Bench Press and Squat Exercises.",
-    "High-load low-volume warm-up increases performance (J Bodywork & Movement Therapies, 2024).",
-    "GentilCore Blog – Complete Overhead Press Warmup.",
-    "Well+Good (2022) Science-Backed Warm-ups for Lifting.",
+    "Ribeiro et al. (2020), The Role of Specific Warm-up during Bench Press and Squat Exercises",
+    "Viveiros et al. (2024), High-load low-volume warm-up increases performance",
+    "Well+Good - The Right Way to Warm Up for Lifting Weights, According to Science"
   ],
 };
 
