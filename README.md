@@ -34,7 +34,7 @@ This project started as an experiment with **Perplexity Labs** to generate the i
 
 * [Ribeiro et al. (2020), *The Role of Specific Warm-up during Bench Press and Squat Exercises*](https://pubmed.ncbi.nlm.nih.gov/32971729/).
 * [Viveiros et al. (2024), *High-load low-volume warm-up increases performance*](https://pubmed.ncbi.nlm.nih.gov/39593476/)
-* [Well+Good - *The Right Way to Warm Up for Lifting Weights, According to Science*](https://www.wellandgood.com/fitness/weight-lifting-warm-up).
+* [Well+Good - *The Right Way to Warm Up for Lifting Weights, According to Science*](https://www.wellandgood.com/fitness/weight-lifting-warm-up)
 
 ## 📜 Initial Thread
 

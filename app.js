@@ -57,11 +57,6 @@ const DATA = {
       ],
     },
   },
-  references: [
-    "Ribeiro et al. (2020), The Role of Specific Warm-up during Bench Press and Squat Exercises",
-    "Viveiros et al. (2024), High-load low-volume warm-up increases performance",
-    "Well+Good - The Right Way to Warm Up for Lifting Weights, According to Science"
-  ],
 };
 
 // ---------- Helpers ----------
@@ -83,13 +78,6 @@ const accordionHeaders = document.querySelectorAll('.accordion__header');
 
 // ---------- Init ----------
 function init() {
-  // Populate refs
-  DATA.references.forEach((r) => {
-    const li = document.createElement('li');
-    li.textContent = r;
-    refList.appendChild(li);
-  });
-
   // Event listeners
   bodyPartEl.addEventListener('change', computeAndRender);
   weightEl.addEventListener('input', computeAndRender);
