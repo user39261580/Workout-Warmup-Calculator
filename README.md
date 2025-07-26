@@ -5,7 +5,7 @@
 ![Perplexity](https://img.shields.io/badge/perplexity-000000?style=for-the-badge&logo=perplexity&logoColor=088F8F)
 ![GitHub Copilot](https://img.shields.io/badge/github_copilot-8957E5?style=for-the-badge&logo=github-copilot&logoColor=white)
 
-# Workout Warm-up Planner
+# Workout Warmup Calculator
 
 Stop guessing your warmups. Start lifting smarter. This simple tool generates a science-backed warmup routine to prepare you for heavy lifts, helping you increase performance and reduce injury risk.
 
