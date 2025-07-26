@@ -28,6 +28,7 @@ This project started as an experiment with **Perplexity Labs** to generate the i
 * [ ] Refine the references section for better readability.
 * [ ] Convert the site into a full Progressive Web App (PWA).
 * [ ] Apply a Cloudflare domain, SSL, and analytics.
+* [ ] Add plate calculator for barbell
 
 ## 📖 Key References \& Readings
 
